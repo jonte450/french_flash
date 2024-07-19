@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+
+
+{% block content %}
+ <h2>French to English translation Flash-Cards</h2>
+ <ul>
+    {% for card in cards %}
+    <li>{{card.french_word}} - {{card.english_translation}}
+    <form action="{{url_for('delete_card',id=card.id)}}" method="POST" style="display:inline;">
+      <button type="submit">Delete</button>
+    </form>
+    <a href="{{url_for('update_card', id=card.id)}}">Edit</a>
+   </li>
+    {% endfor %}
+ </ul>
+
+ {% endblock %}

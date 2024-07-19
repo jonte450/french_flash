@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h2> Add a New Flash Card</h2>
+<form method="POST">
+    <label for="french_word">French Word</label>
+    <input type="text" id="french_word" name="french_word" required>
+    <br>
+    <label for="english_translation">English Translation</label>
+    <input type="text" id="english_translation" name="english_translation" required>
+    <br>
+    <input type="submit" value="Add Card">
+</form>
+{% endblock %}

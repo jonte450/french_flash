@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Flashcard</title>
+</head>
+<body>
+    <h1>Update Flashcard</h1>
+    <form action="{{ url_for('update_card', id=card.id) }}" method="POST">
+        <label for="french_word">French Word:</label>
+        <input type="text" id="french_word" name="french_word" value="{{ card.french_word }}" required>
+        <br>
+        <label for="english_translation">English Translation:</label>
+        <input type="text" id="english_translation" name="english_translation" value="{{ card.english_translation }}" required>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to Flashcards</a>
+</body>
+</html>
